@@ -1,6 +1,6 @@
 # workman
 
-`go.work` cli manager.
+A simple cli tool to manage your `go.work` file.
 
 ## How to install
 
