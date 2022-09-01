@@ -16,9 +16,7 @@ jobs:
 
       - run: CGO_ENABLED=0 go build -o workman . && tar -zcf workman_linux_amd64.tar.gz workman
       - run: CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o workman.exe .
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq workman_windows_amd64.zip workman.exe
+      - run: zip -qq workman_windows_amd64.zip workman.exe
       - run: CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o workman . && tar -zcf workman_darwin_amd64.tar.gz workman
 
       - name: Release
