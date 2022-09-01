@@ -15,8 +15,8 @@ jobs:
           go-version: "1.19"
 
       - run: CGO_ENABLED=0 go build -o workman . && tar -zcf workman_linux_amd64.tar.gz workman
-      - run: CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o workman.exe .
-      - run: zip -qq workman_windows_amd64.zip workman.exe
+      - run: CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o workman.exe . && tar -zcf workman_windows_amd64.tar.gz workman.exe
+      # - run: zip -qq workman_windows_amd64.zip workman.exe
       - run: CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o workman . && tar -zcf workman_darwin_amd64.tar.gz workman
 
       - name: Release
@@ -24,7 +24,7 @@ jobs:
         with:
           files: |
             workman_linux_amd64.tar.gz
-            workman_windows_amd64.zip
+            workman_windows_amd64.tar.gz
             workman_darwin_amd64.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
