@@ -1,4 +1,4 @@
-module workswitch
+module github.com/dashengyeah/workman
 
 go 1.19
 

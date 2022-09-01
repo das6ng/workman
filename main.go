@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"path/filepath"
-	"workswitch/mgr"
+
+	"github.com/dashengyeah/workman/mgr"
 )
 
 var (
