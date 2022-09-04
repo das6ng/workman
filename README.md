@@ -129,3 +129,12 @@ use (
 ```
 
 That's it.
+
+## Dependencies
+
+```
+atomicgo.dev/cursor v0.1.1
+atomicgo.dev/keyboard v0.2.8
+github.com/pterm/pterm v0.12.45
+golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4
+```
