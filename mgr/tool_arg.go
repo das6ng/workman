@@ -2,6 +2,7 @@ package mgr
 
 import (
 	"encoding/json"
+	"sort"
 )
 
 type updateMod struct {
@@ -53,6 +54,8 @@ func (m *WorkManager) GetInfo() workInfo {
 	used := m.getUsedModules()
 	nearby := m.getNearbyModules()
 	total := uniqStrList(append(used, nearby...))
+	sort.Strings(used)
+	sort.Strings(total)
 	return workInfo{
 		result: result{
 			OK: true,
