@@ -4,9 +4,9 @@ A simple cli tool to manage your `go.work` file.
 
 ## How to install
 
-- method 1: Use the `go` command `go install github.com/dashengyeah/workman@latest`.
+- method 1: Use the `go` command `go install github.com/das6ng/workman@latest`.
 
-- method 2: Go to the [release](https://github.com/dashengyeah/workman/releases) page.
+- method 2: Go to the [release](https://github.com/das6ng/workman/releases) page.
 
 ## How to use
 
@@ -20,7 +20,7 @@ Usage of workman:
   -u string
         update go.work (default "{}")
 ```
-> I'm working on a `vscode-go-work-manager` plugin too. But not sure when to finish, ah...🎃
+> There is a `dashengyeah.vscode-go-work-manager` [plugin](https://marketplace.visualstudio.com/items?itemName=dashengyeah.vscode-go-work-manager), enjoy it! 🎃
 
 ### Example
 
