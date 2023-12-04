@@ -1,6 +1,8 @@
 package mgr
 
 import (
+	"log"
+
 	"atomicgo.dev/cursor"
 	"atomicgo.dev/keyboard"
 	"atomicgo.dev/keyboard/keys"
@@ -15,7 +17,7 @@ func (m *WorkManager) CUIMain() {
 		m.ShowUsed()
 		var add, drop []string
 		exit := false
-		keyboard.Listen(func(key keys.Key) (stop bool, err error) {
+		if err := keyboard.Listen(func(key keys.Key) (stop bool, err error) {
 			switch key.Code {
 			case keys.RuneKey:
 				if key.String() == "q" || key.String() == "Q" {
@@ -30,7 +32,9 @@ func (m *WorkManager) CUIMain() {
 				return true, nil
 			}
 			return false, nil
-		})
+		}); err != nil {
+			log.Println("keyboard listen err:", err)
+		}
 		if exit {
 			m.Printer.Msg("Bye")
 			break

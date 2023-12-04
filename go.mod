@@ -1,12 +1,12 @@
-module github.com/dashengyeah/workman
+module github.com/das6ng/workman
 
-go 1.19
+go 1.21
 
 require (
 	atomicgo.dev/cursor v0.1.1
 	atomicgo.dev/keyboard v0.2.8
 	github.com/pterm/pterm v0.12.45
-	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4
+	golang.org/x/mod v0.14.0
 )
 
 require (

@@ -4,7 +4,7 @@ import (
 	"flag"
 	"path/filepath"
 
-	"github.com/dashengyeah/workman/mgr"
+	"github.com/das6ng/workman/mgr"
 )
 
 var (
