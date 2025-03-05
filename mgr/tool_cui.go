@@ -83,17 +83,10 @@ func (m *WorkManager) ShowSelectModules() (add, drop []string, err error) {
 	used := m.getUsedModules()
 	nearby := m.getNearbyModules()
 	opts := loadSortedMods(used, nearby).Mods()
-	sel := &pterm.InteractiveMultiselectPrinter{
-		TextStyle:      &pterm.ThemeDefault.PrimaryStyle,
-		DefaultText:    "Modules",
-		Options:        opts,
-		OptionStyle:    &pterm.ThemeDefault.DefaultText,
-		DefaultOptions: used,
-		MaxHeight:      9,
-		Selector:       ">",
-		SelectorStyle:  &pterm.ThemeDefault.SecondaryStyle,
-	}
-	selected, err := sel.Show()
+	selected, err := pterm.DefaultInteractiveMultiselect.
+		WithOptions(opts).
+		WithDefaultOptions(used).
+		Show()
 	if err != nil {
 		return
 	}
